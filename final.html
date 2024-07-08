@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    html,
+    body {
+        font-size: 62.5%;
+        font-family: sans-serif;
+        background-color: black;
+        color: white;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        background: url('https://assets.nflxext.com/ffe/siteui/vlv3/c1366fb4-3292-4428-9639-b73f25539794/3417bf9a-0323-4480-84ee-e1cb2ff0966b/IN-en-20240408-popsignuptwoweeks-perspective_alpha_website_small.jpg');
+        height: 700px;
+        width: 100%;
+        background-repeat: no-repeat;
+        border: 2px solid black;
+        background-size: 185rem;
+        background-position: center bottom;
+        position: relative;
+        /* background-color:  linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%); */
+    }
+
+    .back {
+        height: 100%;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
+        position: relative;
+        top: -101.4%;
+        background-color: rgb(0 0 0 / 40%);
+    }
+
+    .nav {
+        /* background-color: aqua; */
+        height: 6rem;
+        max-width: 78%;
+        margin: auto;
+        margin-top: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+    }
+
+    img {
+        width: 15rem;
+    }
+
+    select {
+        height: 4rem;
+        width: 13rem;
+        font-size: 1.5rem;
+        padding-left: 1.2rem;
+        border-radius: 0.4rem;
+        background-color: rgba(37, 41, 38, 0.779);
+        color: white;
+        margin-right: 2rem;
+    }
+
+    button {
+        height: 3.8rem;
+        width: 8rem;
+        background-color: red;
+        color: white;
+        font-size: 1.5rem;
+        font-weight: bold;
+        border-radius: 0.4rem;
+    }
+
+    .main {
+        /* background-color: rgb(255, 0, 0); */
+        min-height: 90%;
+        max-width: 85%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        color: white;
+        position: relative;
+        z-index: 1;
+        text-align: center;
+    }
+
+    .item3 {
+        font-size: 5rem;
+        font-weight: bolder;
+    }
+
+    .item4,
+    .item5 {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .item7 {
+        margin-top: -1rem;
+    }
+
+    input {
+        height: 5.5rem;
+        width: 35rem;
+        margin-right: 1rem;
+        border-radius: .5rem;
+        font-size: 1.6rem;
+        padding-left: 2rem;
+        background-color: rgba(37, 41, 38, 0.779);
+        color: white;
+    }
+
+    .btn {
+        height: 5.8rem;
+        width: 20rem;
+        font-size: 2rem;
+        padding-bottom: 0.3rem;
+    }
+
+    .separation {
+        height: 7px;
+        background-color: rgb(46, 44, 44);
+        position: relative;
+        z-index: 20;
+    }
+
+    .section1 {
+        height: 550px;
+        max-width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .item8{
+        letter-spacing: -0.7px;
+    }
+    .item9 {
+        font-size: 5rem;
+        font-weight: bolder;
+        margin-bottom: 2rem;
+    }
+
+    .item10 {
+        font-size: 2.5rem;
+    }
+
+    .image-video {
+        position: relative;
+    }
+
+    .image {
+        width: 57.5rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    video {
+        width: 42rem;
+        position: absolute;
+        left: 7.5rem;
+        top: 9rem;
+    }
+
+    #pic {
+        width: 35rem;
+        position: absolute;
+        left: 11rem;
+        top: 3.6rem;
+    }
+
+    .photo {
+        width: 57.5rem;
+    }
+
+    .new {
+        position: relative;
+        z-index: 1;
+        width: 30rem;
+        height: 10rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        top: -13rem;
+        left: 13.5rem;
+        background-color: black;
+        border: 2px solid rgba(103, 98, 98, 0.87);
+        border-radius: 2rem;
+    }
+
+    .img {
+        width: 6rem;
+    }
+
+    .hi {
+        font-size: 1.6rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+    .ho {
+        font-size: 1.5rem;
+        color: rgb(5, 87, 253);
+    }
+
+    .downloading {
+        background: url(https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/download-icon.gif) center center no-repeat;
+        width: 4rem;
+        height: 4rem;
+        background-size: cover;
+        margin-left: 2.5rem;
+    }
+
+    .imagelast {
+        width: 40.5rem;
+        height: 20rem;
+    }
+     
+    h1{
+        font-size: 5rem;
+        text-align: center;
+        height: 8rem;
+        margin-top: 5rem;
+    }
+    .bigpart{
+        height: 544px;
+    }
+    .part{
+        max-width: 85vw;
+        margin: auto;
+    }
+    .question{
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+        font-size: 2.5rem;
+        max-width: 85vw;
+        margin: auto;
+        height: 8rem;
+        margin-bottom: 1rem;
+        background-color: rgba(68, 67, 67, 0.63);
+        /* gap: 45vw; */
+        padding: 0rem 2rem 0rem 2rem;
+    }
+    .answer{
+    /* font-size: 2.5rem;
+    max-width: 70vw;
+    margin: auto; */
+    max-height: 0;
+    overflow: hidden;
+    }
+    .active .answer {
+    max-height: 16.5rem;
+    font-size: 2.5rem;
+    max-width: 85vw;
+    margin: auto;
+    transition: max-height 1.5s ease;
+    background-color: rgba(107, 104, 104, 0.63);
+    }
+    .active .plus{
+        transform: rotate(45deg);
+        transition: transform 0.5s ease-in;
+    }
+
+    .plus{
+        font-size: 3.6vw;
+        font-weight: lighter;
+    }
+    .space{height: 2.5px;}
+    .space2{
+        margin-top: 10rem;
+    }
+
+    @media screen and (max-width: 1270px) and (min-width: 960px) {
+        .section1 {
+            max-width: 90%;
+            height: 575px;
+        }
+     .image {
+            width: 48vw;
+        }
+        video {
+            width: 38vw;
+            left: 6rem;
+            top: 7.5rem;
+        }   
+     #pic {
+     width: 29vw;
+     left: 10rem;
+    }
+    
+.photo {
+    width: 46vw;
+}
+    }
+    @media screen and (max-width: 1270px) and (min-width: 1100px) {
+        .new{
+            height: 9rem ;
+            left: 11vw;
+        }
+    }
+    @media screen and (max-width: 1100px) and (min-width: 960px) {
+        .new{
+            left: 8vw;
+        }}
+    @media screen and (max-width: 960px) and (min-width: 725px) {
+     .section1 {
+            flex-direction: column;
+            height: 730px;
+        }
+        .item3{
+            font-size: 4.5rem;
+        }
+     .item8 {
+            text-align: center;
+        }
+     .item9 {
+            font-size: 3.3rem;
+        }
+     .item10 {
+       font-size: 1.85rem;
+       }
+     .image {
+      width: 64.5rem;
+      }
+      video{
+        width: 49rem;
+        left: 8.5rem;
+      }
+      #pic {
+      width: 40rem;
+    }
+    .photo {
+    width: 67vw;
+   }
+    .new{
+        left: 16vw;
+        height: 8rem;
+    }
+}
+    @media screen and (max-width: 725px) and (min-width: 320px) {
+        .container{
+            height: 540px;
+        }
+        .main{
+            min-height: 90%;
+        }
+        .nav{
+            height: 5rem;
+            max-width: 93%;
+            margin-top: 1rem;
+        }
+        img{
+            width: 10rem;
+        }
+        select{
+          height: 3.6rem;
+          width: 6rem;
+          font-size: 1.2rem;
+          margin-right: 0.5rem;
+        }
+        button{
+            width:6.5rem;
+        }
+        .btn{
+            width: 16rem;
+        }
+        .section1 {
+            flex-direction: column;
+            height: 470px;
+        }
+        .item3{
+            font-size: 3.5rem;
+        }
+        .item4,.item5{
+            font-size: 1.5rem;
+        }
+     .item8 {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+     .item9 {
+            font-size: 3.3rem;
+        }
+     .item10 {
+       font-size: 1.85rem;
+       }
+       .image {
+      width: 90vw;
+      }
+      video{
+        width: 72vw;
+        left: 4.5rem;
+        top: 5rem;
+       }
+       
+        #pic {
+        width: 55vw;
+        top: 3.6rem;
+    }
+    .photo {
+    width: 80vw;
+    } 
+   h1{
+    font-size: 3.5rem;
+    height: 9rem;
+   }
+      }
+      @media screen and (max-width: 725px) and (min-width: 500px){
+    .new
+    { top: -10rem;
+    left: 15vw;
+    height: 8rem;
+      }
+    }
+    @media screen and (max-width: 745px) and (min-width: 627px){
+    input{
+     height: 5.5rem;
+    width: 47vw;
+      }   
+    }
+    @media screen and (max-width: 627px) and (min-width: 320px){
+    input{
+        height: 4.8rem;
+    width: 70vw;
+    margin-bottom: 1rem;  
+    }
+}
+.btn {
+    height: 5.4rem;
+}
+    @media screen and (max-width: 500px) and (min-width: 320px){
+    .new
+    { top: -10rem;
+    left: 11vw;
+    height: 7rem;
+    width: 23rem;
+      }
+      .downloading{
+        margin-left: -1.5rem;
+      }
+      .new .img{
+        width:5rem;
+      }    }
+      @media screen and (max-width: 520px) {
+        #pic {
+            left: 8rem;        
+    }
+      }
+</style>
+
+<body>
+    <div class="container">
+        <div class="nav">
+            <div class="item1"><img src="<svg viewBox="0 0 111 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="default-ltr-cache-1d568uk ev1dnif2"><g><path d="M105.06233,14.2806261 L110.999156,30 C109.249227,29.7497422 107.500234,29.4366857 105.718437,29.1554972 L102.374168,20.4686475 L98.9371075,28.4375293 C97.2499766,28.1563408 95.5928391,28.061674 93.9057081,27.8432843 L99.9372012,14.0931671 L94.4680851,-5.68434189e-14 L99.5313525,-5.68434189e-14 L102.593495,7.87421502 L105.874965,-5.68434189e-14 L110.999156,-5.68434189e-14 L105.06233,14.2806261 Z M90.4686475,-5.68434189e-14 L85.8749649,-5.68434189e-14 L85.8749649,27.2499766 C87.3746368,27.3437061 88.9371075,27.4055675 90.4686475,27.5930265 L90.4686475,-5.68434189e-14 Z M81.9055207,26.93692 C77.7186241,26.6557316 73.5307901,26.4064111 69.250164,26.3117443 L69.250164,-5.68434189e-14 L73.9366389,-5.68434189e-14 L73.9366389,21.8745899 C76.6248008,21.9373887 79.3120255,22.1557784 81.9055207,22.2804387 L81.9055207,26.93692 Z M64.2496954,10.6561065 L64.2496954,15.3435186 L57.8442216,15.3435186 L57.8442216,25.9996251 L53.2186709,25.9996251 L53.2186709,-5.68434189e-14 L66.3436123,-5.68434189e-14 L66.3436123,4.68741213 L57.8442216,4.68741213 L57.8442216,10.6561065 L64.2496954,10.6561065 Z M45.3435186,4.68741213 L45.3435186,26.2498828 C43.7810479,26.2498828 42.1876465,26.2498828 40.6561065,26.3117443 L40.6561065,4.68741213 L35.8121661,4.68741213 L35.8121661,-5.68434189e-14 L50.2183897,-5.68434189e-14 L50.2183897,4.68741213 L45.3435186,4.68741213 Z M30.749836,15.5928391 C28.687787,15.5928391 26.2498828,15.5928391 24.4999531,15.6875059 L24.4999531,22.6562939 C27.2499766,22.4678976 30,22.2495079 32.7809542,22.1557784 L32.7809542,26.6557316 L19.812541,27.6876933 L19.812541,-5.68434189e-14 L32.7809542,-5.68434189e-14 L32.7809542,4.68741213 L24.4999531,4.68741213 L24.4999531,10.9991564 C26.3126816,10.9991564 29.0936358,10.9054269 30.749836,10.9054269 L30.749836,15.5928391 Z M4.78114163,12.9684132 L4.78114163,29.3429562 C3.09401069,29.5313525 1.59340144,29.7497422 0,30 L0,-5.68434189e-14 L4.4690224,-5.68434189e-14 L10.562377,17.0315868 L10.562377,-5.68434189e-14 L15.2497891,-5.68434189e-14 L15.2497891,28.061674 C13.5935889,28.3437998 11.906458,28.4375293 10.1246602,28.6868498 L4.78114163,12.9684132 Z"></path></g></svg>
+" alt=""></div>
+            <div class="item2">
+                <select name="" id="">
+                    <option value="">English</option>
+                    <option value="">हिंदी</option>
+                </select>
+                <button>sign in</button>
+            </div>
+        </div>
+        <div class="main">
+            <div class="item3">Unlimited movies, TV shows and more</div>
+            <div class="item4">Watch anywhere. Cancel anytime.</div>
+            <div class="item5">Ready to watch? Enter your email to create or restart your membership.</div>
+            <div class="item6"></div>
+            <div class="item7"><span><input type="email" placeholder="Email adress"></span>
+                <button class="btn">Get started &gt;</button>
+            </div>
+        </div>
+        <div class="back"></div>
+    </div>
+    <div class="separation"></div>
+    <div class="section1">
+        <div class="item8">
+            <div class="item9">Enjoy on your TV</div>
+            <div class="item10">Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.
+            </div>
+        </div>
+        <div class="image-video">
+            <img class="image" src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png"
+                alt="">
+            <video src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-in-0819.m4v"
+                autoplay loop muted></video>
+        </div>
+    </div>
+    <div class="separation"></div>
+    <div class="section1">
+        <div class="image-video">
+            <img class="photo"
+                src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg" alt="">
+            <div class="new">
+                <img class="img"
+                    src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/boxshot.png" alt="">
+                <div class="item11">
+                    <div class="hi">Stranger Things</div>
+                    <div class="ho">Downloading...</div>
+                </div>
+                <div class="downloading"></div>
+            </div>
+        </div>
+        <div class="item8">
+            <div class="item9">Download your shows to watch offline</div>
+            <div class="item10">Save your favourites easily and always have something to watch.</div>
+        </div>
+    </div>
+    <div class="separation"></div>
+    <div class="section1">
+        <div class="item8">
+            <div class="item9">Watch everywhere</div>
+            <div class="item10">Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</div>
+        </div>
+        <div class="image-video">
+            <img class="image"
+                src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile-in.png" alt="">
+            <video id="pic"
+                src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices-in.m4v"
+                autoplay loop muted></video>
+        </div>
+    </div>
+    <div class="separation"></div>
+    <div class="section1">
+        <!-- <div class="image-video"> -->
+        <img class="image"
+            src="https://occ-0-6245-2164.1.nflxso.net/dnm/api/v6/19OhWN2dO19C9txTON9tvTFtefw/AAAABVr8nYuAg0xDpXDv0VI9HUoH7r2aGp4TKRCsKNQrMwxzTtr-NlwOHeS8bCI2oeZddmu3nMYr3j9MjYhHyjBASb1FaOGYZNYvPBCL.png?r=54d"
+            alt="">
+        <!-- </div> -->
+        <div class="item8">
+            <div class="item9">Watch everywhere</div>
+            <div class="item10">Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</div>
+        </div>
+    </div>
+    <div class="separation"></div>
+    <div class="section2">
+        <h1>Frequently Asked Questions</h1>
+        <div class="bigpart">
+        <div class="part">
+            <div class="question"><div class="text">
+                What is Netflix?</div><div class="plus">+</div></div>
+                <p class="answer">Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries and more – on thousands of internet-connected devices. <br><br>
+                    You can watch as much as you want, whenever you want, without a single ad – all for one low monthly price. There's always something new to discover, and new TV shows and movies are added every week!<br><br></p>
+                    </div>
+                    <div class="part">
+            <div class="question"><div class="text">
+                How much does netflix cost?</div><div class="plus">+</div></div>
+                <p class="answer">Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed monthly fee. Plans range from ₹149 to ₹649 a month. No extra costs, no contracts.<br><br></p>
+            </div>
+            <div class="part">
+            <div class="question"><div class="text">
+                Where can I watch?</div><div class="plus">+</div></div>
+                <p class="answer">Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web at netflix.com from your personal computer or on any internet-connected device that offers the Netflix app, including smart TVs, smartphones, tablets, streaming media players and game consoles. <br>
+                    You can also download your favourite shows with the iOS, Android, or Windows 10 app. Use downloads to watch while you're on the go and without an internet connection. Take Netflix with you anywhere. <br><br></p>
+                </div>
+                <div class="part">
+            <div class="question"><div class="text">
+                How do I cancel?</div><div class="plus">+</div></div> 
+                <p class="answer">Netflix is flexible. There are no annoying contracts and no commitments. You can easily cancel your account online in two clicks. There are no cancellation fees – start or stop your account anytime.<br><br></p>
+                </div>
+                <div class="part">
+            <div class="question"><div class="text">
+               What can I watch on Netflix?</div><div class="plus">+</div></div>
+               <p class="answer">Netflix has an extensive library of feature films, documentaries, TV shows, anime, award-winning Netflix originals, and more. Watch as much as you want, anytime you want.<br><br></p>
+               </div>
+               <div class="part">
+            <div class="question"><div class="text">
+                Is Netflix good for kids?</div><div class="plus">+</div></div>
+                <p class="answer">The Netflix Kids experience is included in your membership to give parents control while kids enjoy family-friendly TV shows and films in their own space. <br><br>
+                    Kids profiles come with PIN-protected parental controls that let you restrict the maturity rating of content kids can watch and block specific titles you don’t want kids to see.<br><br></p>
+               </div> 
+            </div>
+               <div class="main">
+                <div class="space"></div>
+                <div class="item5">Ready to watch? Enter your email to create or restart your membership.</div>
+                <div class="space"></div>
+                <div class="item7"><span><input type="email" placeholder="Email adress"></span>
+                    <button class="btn">Get started &gt;</button>
+                </div>
+                </div> 
+                <div class="space2"></div>
+        
+        <!-- <div class="main">
+        <div class="item5">Ready to watch? Enter your email to create or restart your membership.</div>
+        <div class="space"></div>
+        <div class="item7"><span><input type="email" placeholder="Email adress"></span>
+            <button class="btn">Get started &gt;</button>
+        </div>
+        </div>
+    </div> -->
+    
+    <div class="separation"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>
